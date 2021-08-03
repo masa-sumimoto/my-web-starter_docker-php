@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>Sample - Bootstrap col-space mixin</title>
+    <link rel="stylesheet" href="/assets/stylesheets/bundle.css" />
+  </head>
+  <body class="page-bs-col-space-mixin">
+    <main class="my-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="S_meta">
+              <h2 class="S_meta__ttl">Sample - Bootstrap col-space mixin</h2>
+              <h3 class="S_meta__sub-ttl">
+                Bootstrapのグリッドシステムを拡張したmixin
+              </h3>
+              <p class="S_meta__txt">
+                _mixin.scss内にcol-spaceというmixinを加え、それを利用したサンプルである。<br />
+                これは、Bootstrapのcontainer > row >
+                colの関係で生まれる左右のガターを操作するためのもの。<br />
+                今回はutilities.scssにユーティリティクラスを定義し、それを利用した。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container my-3">
+        <div class="row">
+          <div class="col-4 bg-primary">
+            <div class="bg-secondary">通常コンテナ利用</div>
+          </div>
+          <div class="col-4 bg-primary">
+            <div class="bg-secondary">通常コンテナ利用</div>
+          </div>
+          <div class="col-4 bg-primary">
+            <div class="bg-secondary">通常コンテナ利用</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container col-gutter-75 my-3">
+        <div class="row">
+          <div class="col-4 bg-primary">
+            <div class="bg-secondary">gutter-75コンテナ利用</div>
+          </div>
+          <div class="col-4 bg-primary">
+            <div class="bg-secondary">gutter-75コンテナ利用</div>
+          </div>
+          <div class="col-4 bg-primary">
+            <div class="bg-secondary">gutter-75コンテナ利用</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container col-gutter-50 my-3">
+        <div class="row">
+          <div class="col-4 bg-primary">
+            <div class="bg-secondary">gutter-50コンテナ利用</div>
+          </div>
+          <div class="col-4 bg-primary">
+            <div class="bg-secondary">gutter-50コンテナ利用</div>
+          </div>
+          <div class="col-4 bg-primary">
+            <div class="bg-secondary">gutter-50コンテナ利用</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container col-gutter-40 my-3">
+        <div class="row">
+          <div class="col-4 bg-primary">
+            <div class="bg-secondary">gutter-40コンテナ利用</div>
+          </div>
+          <div class="col-4 bg-primary">
+            <div class="bg-secondary">gutter-40コンテナ利用</div>
+          </div>
+          <div class="col-4 bg-primary">
+            <div class="bg-secondary">gutter-40コンテナ利用</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/assets/javascripts/bundle.js"></script>
+  </body>
+</html>

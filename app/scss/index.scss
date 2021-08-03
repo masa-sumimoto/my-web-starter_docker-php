@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+// Libraries
+@import 'bootstrap';
+
+// Core
+@import './core/variables';
+@import './core/mixins';
+@import './core/utilities';
+@import './core/base';
+
+// Components
+@import './components/component1';
+
+// Pages
+@import './pages/bs-media-query';

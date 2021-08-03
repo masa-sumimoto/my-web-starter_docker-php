@@ -1,0 +1,14 @@
+{
+  "extends": ["plugin:prettier/recommended"],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "window": true
+  },
+  "rules": {
+    "no-var": "error"
+  }
+}

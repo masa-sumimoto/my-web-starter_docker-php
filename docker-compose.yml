@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  db:
+    build: ./db
+    volumes:
+      - db_volume:/var/lib/mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: app_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+  # php + web server
+  php:
+    depends_on:
+      - db
+    build: ./php
+    volumes:
+      - ./app/dist:/var/www/html
+    ports:
+      - 8080:80
+  app:
+    build: ./app
+    working_dir: /app
+    restart: unless-stopped
+    volumes:
+      - ./app:/app
+      - node_modules_volume:/app/node_modules/
+    command: >
+      sh -c "
+      yarn install && yarn run watch
+      "
+volumes:
+  db_volume:
+  node_modules_volume:

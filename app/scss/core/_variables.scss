@@ -1,0 +1,457 @@
+// ========================================
+// variables.scss
+// ========================================
+
+// ---------------------------------
+// Fonts
+// ---------------------------------
+// [note] $font-family-base = $font-family-sans-serif
+$font-family-sans-serif: Helvetica Neue, Helvetica, Arial, YuGothic, Yu Gothic,
+  sans-serif;
+$font-family-condensed-sans-serif: Helvetica Neue, Helvetica, Arial, YuGothic,
+  Yu Gothic, sans-serif;
+$font-family-serif: Times, Georgia, serif;
+$font-family-monospace: monospace;
+
+$font-family-base: $font-family-sans-serif;
+$font-family-base-cond: $font-family-condensed-sans-serif;
+$font-family-display: $font-family-sans-serif;
+$headings-font-family: $font-family-sans-serif;
+
+// ---------------------------------
+// Font
+// ---------------------------------
+$font-size-base: 1rem;
+$font-weight-base: 400;
+$font-size-xl: ($font-size-base * 1.5); // 24px
+$font-size-lg: ($font-size-base * 1.25); // 20px
+$font-size-md: ($font-size-base * 1.125); // 18px
+$font-size-sm: ($font-size-base * 0.875); // 14px
+$font-size-xs: ($font-size-base) * 0.75; // 12px
+
+// ---------------------------------
+// Heading Font
+// ---------------------------------
+$h1-font-size: $font-size-base * 3; // 48px
+$h2-font-size: $font-size-base * 2; // 32px
+$h3-font-size: $font-size-base * 1.75; // 28px
+$h4-font-size: $font-size-base * 1.5; // 24px
+$h5-font-size: $font-size-base * 1.25; // 20px
+$h6-font-size: $font-size-base; // 16px
+
+// ---------------------------------
+// Color System: Define Function
+// ---------------------------------
+$colors: ();
+
+@function colors($key) {
+  @return map-get($colors, $key);
+}
+
+$theme-colors: ();
+
+@function theme-colors($key) {
+  @return map-get($theme-colors, $key);
+}
+
+@function get-scale-color($color-info, $scaleLength, $percent) {
+  $r: map-get($color-info, r);
+  $g: map-get($color-info, g);
+  $b: map-get($color-info, b);
+  $ratio: $scaleLength - ($percent / 10);
+  $result-r: $r + ((255 - $r) / $scaleLength) * $ratio;
+  $result-g: $g + ((255 - $g) / $scaleLength) * $ratio;
+  $result-b: $b + ((255 - $b) / $scaleLength) * $ratio;
+
+  @return rgb($result-r, $result-g, $result-b);
+}
+
+// ---------------------------------
+// Color System
+//
+// [note] Use Bootstrap5 Color System Regulation
+// [note] Use Tailwind Colors
+// ---------------------------------
+
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #edf2f7;
+$gray-300: #e2e8f0;
+$gray-400: #cbd5e0;
+$gray-500: #a0aec0;
+$gray-600: #718096;
+$gray-700: #4a5568;
+$gray-800: #2d3748;
+$gray-900: #1a202c;
+$black: #000;
+
+// fusv-disable
+$grays: (
+  '100': $gray-100,
+  '200': $gray-200,
+  '300': $gray-300,
+  '400': $gray-400,
+  '500': $gray-500,
+  '600': $gray-600,
+  '700': $gray-700,
+  '800': $gray-800,
+  '900': $gray-900,
+);
+// fusv-enable
+
+$blue: #4299e1;
+$indigo: #667eea;
+$purple: #9f7aea;
+$pink: #ed64a6;
+$red: #f56565;
+$orange: #ed8936;
+$yellow: #ecc94b;
+$green: #48bb78;
+$teal: #38b2ac;
+$cyan: #11a6db; // original color
+
+// scss-docs-start colors-map
+$colors: (
+  'blue': $blue,
+  'indigo': $indigo,
+  'purple': $purple,
+  'pink': $pink,
+  'red': $red,
+  'orange': $orange,
+  'yellow': $yellow,
+  'green': $green,
+  'teal': $teal,
+  'cyan': $cyan,
+  'white': $white,
+  'gray': $gray-600,
+  'gray-dark': $gray-800,
+) !default;
+// scss-docs-end colors-map
+
+$primary: $blue;
+$secondary: $gray-600;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-900;
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
+) !default;
+// scss-docs-end theme-colors-map
+
+// fusv-disable
+$blue-100: #ebf8ff;
+$blue-200: #bee3f8;
+$blue-300: #90cdf4;
+$blue-400: #63b3ed;
+$blue-500: $blue;
+$blue-600: #3182ce;
+$blue-700: #2b6cb0;
+$blue-800: #2c5282;
+$blue-900: #2a4365;
+
+$indigo-100: #ebf4ff;
+$indigo-200: #c3dafe;
+$indigo-300: #a3bffa;
+$indigo-400: #7f9cf5;
+$indigo-500: $indigo;
+$indigo-600: #5a67d8;
+$indigo-700: #4c51bf;
+$indigo-800: #434190;
+$indigo-900: #3c366b;
+
+$purple-100: #faf5ff;
+$purple-200: #e9d8fd;
+$purple-300: #d6bcfa;
+$purple-400: #b794f4;
+$purple-500: $purple;
+$purple-600: #805ad5;
+$purple-700: #6b46c1;
+$purple-800: #553c9a;
+$purple-900: #44337a;
+
+$pink-100: #fff5f7;
+$pink-200: #fed7e2;
+$pink-300: #fbb6ce;
+$pink-400: #f687b3;
+$pink-500: $pink;
+$pink-600: #d53f8c;
+$pink-700: #b83280;
+$pink-800: #97266d;
+$pink-900: #702459;
+
+$red-100: #fff5f5;
+$red-200: #fed7d7;
+$red-300: #feb2b2;
+$red-400: #fc8181;
+$red-500: $red;
+$red-600: #e53e3e;
+$red-700: #c53030;
+$red-800: #9b2c2c;
+$red-900: #742a2a;
+
+$orange-100: #fffaf0;
+$orange-200: #feebc8;
+$orange-300: #fbd38d;
+$orange-400: #f6ad55;
+$orange-500: $orange;
+$orange-600: #dd6b20;
+$orange-700: #c05621;
+$orange-800: #9c4221;
+$orange-900: #7b341e;
+
+$yellow-100: #fffff0;
+$yellow-200: #fefcbf;
+$yellow-300: #faf089;
+$yellow-400: #f6e05e;
+$yellow-500: $yellow;
+$yellow-600: #d69e2e;
+$yellow-700: #b7791f;
+$yellow-800: #975a16;
+$yellow-900: #744210;
+
+$green-100: #f0fff4;
+$green-200: #c6f6d5;
+$green-300: #9ae6b4;
+$green-400: #68d391;
+$green-500: $green;
+$green-600: #38a169;
+$green-700: #2f855a;
+$green-800: #276749;
+$green-900: #22543d;
+
+$teal-100: #e6fffa;
+$teal-200: #b2f5ea;
+$teal-300: #81e6d9;
+$teal-400: #4fd1c5;
+$teal-500: $teal;
+$teal-600: #319795;
+$teal-700: #2c7a7b;
+$teal-800: #285e61;
+$teal-900: #234e52;
+
+$cyan-100: #daf7f9;
+$cyan-200: #adeef3;
+$cyan-300: #75e0ee;
+$cyan-400: #30c7e6;
+$cyan-500: $cyan;
+$cyan-600: #0d85c6;
+$cyan-700: #126aa1;
+$cyan-800: #135176;
+$cyan-900: #11415b;
+// fusv-enable
+
+// Brand theme
+// ------------------------------
+$color-dropbox: #1f8ce6;
+$color-facebook: #3b5998;
+$color-feedly: #6cc655;
+$color-flicker: #ff0084;
+$color-google-plus: #dd4b39;
+$color-instagram: #e1306c;
+$color-line: #1dcd00;
+$color-linkedin: #cd201f;
+$color-pinterest: #cb2027;
+$color-tumblr: #2c4762;
+$color-twitter: #55acee;
+$color-youtube: #cd201f;
+$theme-colors: map-merge(
+  (
+    'dropbox': $color-dropbox,
+    'facebook': $color-facebook,
+    'feedly': $color-feedly,
+    'flicker': $color-flicker,
+    'google-plus': $color-google-plus,
+    'instagram': $color-instagram,
+    'line': $color-line,
+    'linkedin': $color-linkedin,
+    'pinterest': $color-pinterest,
+    'tumblr': $color-tumblr,
+    'twitter': $color-twitter,
+    'youtube': $color-youtube,
+  ),
+  $theme-colors
+);
+
+// ---------------------------------
+// Element Style
+// ---------------------------------
+
+// Element - Base
+// ---------------------------------
+$body-bg: $white;
+$body-color: $gray-900;
+$body-rvs-bg: $body-color;
+$body-rvs-color: $body-bg;
+$link-color: $blue;
+$link-hover-color: darken($link-color, 15%);
+$link-decoration: underline;
+$link-hover-decoration: underline;
+$color-border-cmn: $gray-300;
+
+// Element - header
+// ---------------------------------
+$header-bg-color: $gray-900;
+$header-color: $white;
+$header-link-color: $white;
+$header-link-nvr-color: $white;
+$header-height: 70px;
+
+// Element - footer
+// ---------------------------------
+$footer-bg-color: $gray-900;
+$footer-color: $white;
+$footer-link-color: $white;
+$footer-link-nvr-color: $white;
+
+// Element - breadcrumb
+// ---------------------------------
+$breadcrumb-wrap-bg-color: $gray-400;
+$breadcrumb-bg: $gray-400;
+$breadcrumb-divider: '>';
+
+// ---------------------------------
+// Grid columns / Spacers
+// ---------------------------------
+$spacer: 1rem; // Default: 1rem
+$grid-gutter-width: 30px; // Default: 30px
+$grid-gutter-half-width: $grid-gutter-width / 2;
+$spacer-g: $grid-gutter-width; // Alias
+$spacer-hg: $grid-gutter-half-width; // Alias
+$spacer-cmn: $grid-gutter-half-width; // Alias
+
+$spacers: ();
+$spacers: map-merge(
+  (
+    0: 0,
+    1: (
+      $spacer * 0.25,
+    ),
+    2: (
+      $spacer * 0.5,
+    ),
+    3: $spacer,
+    4: (
+      $spacer * 2,
+    ),
+    5: (
+      $spacer * 3,
+    ),
+    6: (
+      $spacer * 4,
+    ),
+    7: (
+      $spacer * 5.5,
+    ),
+    8: (
+      $spacer * 7,
+    ),
+    9: (
+      $spacer * 9,
+    ),
+    1px: 1px,
+    5px: 5px,
+    10px: 10px,
+    15px: 15px,
+    20px: 20px,
+    25px: 25px,
+    30px: 30px,
+    35px: 35px,
+    g: $grid-gutter-width,
+    hg: $grid-gutter-half-width,
+    cmn: $spacer-cmn,
+  ),
+  $spacers
+);
+
+// ---------------------------------
+// Sizes
+// ---------------------------------
+// $sizes
+// ex) .w-90 = width: 90%;
+// ------------------------------
+$sizes: () !default;
+$sizes: map-merge(
+  (
+    // ↓[note] Already defined
+    // 25: 25%,
+    // 50: 50%,
+    // 75: 75%,
+    // 100: 100%,
+    // auto: auto
+    // ↑[note] Already defined
+    90: 90%,
+    80: 80%,
+    70: 70%,
+    60: 60%,
+    40: 40%,
+    30: 30%,
+    900px: 900px,
+    800px: 800px,
+    700px: 700px,
+    600px: 600px,
+    500px: 500px,
+    400px: 400px,
+    300px: 300px
+  ),
+  $sizes
+);
+
+// ---------------------------------
+// Grid breakpoints
+// ---------------------------------
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px
+// );
+
+// ---------------------------------
+// Grid containers
+// ---------------------------------
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1140px
+// );
+
+// ---------------------------------
+// Various settings
+// ---------------------------------
+// $enable-rounded: false;
+// $enable-grid-classes: true;
+// $enable-gradients: false;
+// $enable-shadows: false;
+// $enable-transitions: false;
+
+// ---------------------------------
+// Buttons + Forms
+// ---------------------------------
+// $input-btn-padding-y: 0.5rem;
+// $btn-padding-x: 2rem;
+
+// ---------------------------------
+// z-index
+// ---------------------------------
+// $zindex-dropdown:          1000 !default;
+// $zindex-sticky:            1020 !default;
+// $zindex-fixed:             1030 !default;
+// $zindex-modal-backdrop:    1040 !default;
+// $zindex-modal:             1050 !default;
+// $zindex-popover:           1060 !default;
+// $zindex-tooltip:           1070 !default;
+$zindex-header: 10;

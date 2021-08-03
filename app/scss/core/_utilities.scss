@@ -1,0 +1,42 @@
+/* stylelint-disable */
+
+// ---------------------------------
+// Sizes
+// ---------------------------------
+
+// width / height
+// ------------------------------
+// [note] Extended Bootstrap $sizes / use Bootstrap utilities.
+// ex) .w-300px = width: 300px;
+// ex) .h-30 = height: 30%;
+
+// max-width
+// ------------------------------
+// [note] Extended Bootstrap $sizes and difined my utilities below / use my utilities.
+// ex) .mw-500px = max-width: 500px;
+// ex) .mw-50 = max-width: 50%;
+@each $key, $val in $sizes {
+  .mw-#{$key} {
+    max-width: #{$val} !important;
+  }
+}
+
+// ---------------------------------
+// Gutter
+// ---------------------------------
+
+.col-gutter-75 {
+  @include col-space();
+}
+
+.col-gutter-65 {
+  @include col-space($m: 0.65);
+}
+
+.col-gutter-50 {
+  @include col-space($m: 0.5);
+}
+
+.col-gutter-40 {
+  @include col-space($m: 0.4);
+}

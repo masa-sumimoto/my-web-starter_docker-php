@@ -1,0 +1,60 @@
+{
+  "name": "docker-php",
+  "author": "Masaaki Sumimoto <masa.sumimoto@gmail> (https://github.com/masa-sumimoto)",
+  "private": true,
+  "description": "This is my starter kit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack serve --open",
+    "serve": "webpack serve --open",
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "dev-build": "webpack --mode development",
+    "prod-build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/masa-sumimoto/docker-php"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@webpack-cli/serve": "^1.3.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^8.1.1",
+    "css-loader": "^5.0.1",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "fibers": "^5.0.0",
+    "mini-css-extract-plugin": "^1.3.5",
+    "postcss": "^8.2.5",
+    "postcss-loader": "5.2.0",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.2.1",
+    "sass": "^1.32.6",
+    "sass-loader": "^11.0.0",
+    "style-loader": "^2.0.0",
+    "stylelint": "^13.9.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.2.0",
+    "stylelint-scss": "^3.19.0",
+    "webpack": "^5.21.1",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.15.0"
+  }
+}

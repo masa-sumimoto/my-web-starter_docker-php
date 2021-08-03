@@ -1,0 +1,99 @@
+// 以下、リポジトリ全体のリセットスタイル
+
+*:focus {
+  outline: none;
+}
+
+html,
+body,
+div,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: $body-bg;
+  color: $body-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  margin: 0;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  padding: 0;
+  text-size-adjust: 100%;
+  word-wrap: break-word;
+}
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  &:hover {
+    color: darken($link-color, 15%);
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+table {
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// 以下、リポジトリ全体で使えるメタ的なパーツ
+.S_meta {
+  background-color: #ebf4ff;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: '解説';
+    background-color: #3c366b;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 5px;
+    color: #fff;
+  }
+
+  &__ttl {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.1;
+    color: #121212;
+  }
+
+  &__sub-ttl {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #555;
+  }
+
+  &__txt {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+}
